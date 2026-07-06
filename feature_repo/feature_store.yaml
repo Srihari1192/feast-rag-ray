@@ -12,10 +12,9 @@ offline_store:
   target_partition_size_mb: 16                # Target partition size (MB)
   enable_ray_logging: false                   # Disable Ray logging for cleaner output
   # ray_address: "127.0.0.1:10001"            # Ray address
-  use_kuberay: true
-  kuberay_conf:
-    cluster_name: ${RAY_CLUSTER}
-    namespace: ${NAMESPACE}
+  use_kuberay: false                                                    # skip CodeFlareRayWrapper entirely
+  ray_address: "ray://feastraytest-head-svc.test-ns-feast-wb-ray1.svc:10001"
+
 
 # Ray compute engine configuration for distributed feature processing
 batch_engine:
@@ -26,10 +25,8 @@ batch_engine:
   target_partition_size_mb: 32                # Target partition size (MB)
   window_size_for_joins: "1H"                 # Time window for distributed joins
   # ray_address: "127.0.0.1:10001"            # Ray address
-  use_kuberay: true                    # Add this
-  kuberay_conf:                        # Add this block
-    cluster_name: ${RAY_CLUSTER}
-    namespace: ${NAMESPACE}
+  use_kuberay: false                    # Add this
+  ray_address: "ray://feastraytest-head-svc.test-ns-feast-wb-ray1.svc:10001"
 
 # Online store for serving features
 online_store:

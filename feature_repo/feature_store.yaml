@@ -16,9 +16,6 @@ offline_store:
   kuberay_conf:
     cluster_name: ${RAY_CLUSTER}
     namespace: ${NAMESPACE}
-    auth_token: ${CLUSTER_TOKEN}
-    auth_server: ${CLUSTER_SERVER}
-    skip_tls: True
 
 # Ray compute engine configuration for distributed feature processing
 batch_engine:
@@ -33,9 +30,6 @@ batch_engine:
   kuberay_conf:                        # Add this block
     cluster_name: ${RAY_CLUSTER}
     namespace: ${NAMESPACE}
-    auth_token: ${CLUSTER_TOKEN}
-    auth_server: ${CLUSTER_SERVER}
-    skip_tls: true
 
 # Online store for serving features
 online_store:

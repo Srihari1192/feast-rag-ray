@@ -21,7 +21,7 @@ offline_store:
     skip_tls: True
     runtime_env:
       pip:
-        - "pandas==2.2.3"
+        - "pandas==3.0.6"
 # Ray compute engine configuration for distributed feature processing
 batch_engine:
   type: ray.engine
@@ -40,7 +40,7 @@ batch_engine:
     skip_tls: true
     runtime_env:
       pip:
-        - "pandas==2.2.3"
+        - "pandas==3.0.6"
 # Online store for serving features
 online_store:
   path: data/online_store.db

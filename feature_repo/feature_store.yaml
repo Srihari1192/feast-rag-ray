@@ -19,7 +19,9 @@ offline_store:
     auth_token: ${CLUSTER_TOKEN}
     auth_server: ${CLUSTER_SERVER}
     skip_tls: True
-
+    runtime_env:
+      pip:
+        - "pandas==2.2.3"
 # Ray compute engine configuration for distributed feature processing
 batch_engine:
   type: ray.engine
@@ -36,7 +38,9 @@ batch_engine:
     auth_token: ${CLUSTER_TOKEN}
     auth_server: ${CLUSTER_SERVER}
     skip_tls: true
-
+    runtime_env:
+      pip:
+        - "pandas==2.2.3"
 # Online store for serving features
 online_store:
   path: data/online_store.db
